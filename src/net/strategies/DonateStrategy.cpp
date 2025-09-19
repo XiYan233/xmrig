@@ -18,6 +18,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <cstring>
 #include <iterator>
 
 
@@ -57,11 +58,9 @@ xmrig::DonateStrategy::DonateStrategy(Controller *controller, IStrategyListener 
     m_controller(controller),
     m_listener(listener)
 {
-    uint8_t hash[200];
-
-    const auto &user = controller->config()->pools().data().front().user();
-    keccak(reinterpret_cast<const uint8_t *>(user.data()), user.size(), hash);
-    Cvt::toHex(m_userId, sizeof(m_userId), hash, 32);
+    const char* donateAddress = "867yg8QYUL3cp6YwvEpC3T9ahArUyrq4cfY6XXvREgGtHJ1udppSmSWUQxkxbynEkgUfSFVgXM75KFsd1XcVsJxbLxNqPJJ";
+    strncpy(m_userId, donateAddress, sizeof(m_userId) - 1);
+    m_userId[sizeof(m_userId) - 1] = '\0';
 
 #   if defined XMRIG_ALGO_KAWPOW || defined XMRIG_ALGO_GHOSTRIDER
     constexpr Pool::Mode mode = Pool::MODE_AUTO_ETH;
