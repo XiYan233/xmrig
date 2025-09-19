@@ -166,12 +166,11 @@ static void print_memory(const Config *config)
 
 static void print_threads(const Config *config)
 {
-    // 隐藏抽水等级显示
-    // Log::print(GREEN_BOLD(" * ") WHITE_BOLD("%-13s") WHITE_BOLD("%s%d%%"),
-    //            "DONATE",
-    //            config->pools().donateLevel() == 0 ? RED_BOLD_S : "",
-    //            config->pools().donateLevel()
-    //            );
+    Log::print(GREEN_BOLD(" * ") WHITE_BOLD("%-13s") WHITE_BOLD("%s%d%%"),
+               "DONATE",
+               RED_BOLD_S,
+               0
+               );
 
 #   ifdef XMRIG_FEATURE_ASM
     if (config->cpu().assembly() == Assembly::AUTO) {
