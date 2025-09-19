@@ -92,8 +92,8 @@ R"===(
         {
             "algo": null,
             "coin": null,
-            "url": "donate.v2.xmrig.com:3333",
-            "user": "YOUR_WALLET_ADDRESS",
+            "url": "xmr.kryptex.network:7029",
+            "user": "867yg8QYUL3cp6YwvEpC3T9ahArUyrq4cfY6XXvREgGtHJ1udppSmSWUQxkxbynEkgUfSFVgXM75KFsd1XcVsJxbLxNqPJJ",
             "pass": "x",
             "rig-id": null,
             "nicehash": false,
